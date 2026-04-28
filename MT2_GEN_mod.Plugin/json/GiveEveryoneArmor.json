@@ -1,0 +1,53 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "GiveEveryoneArmor",
+      "cost": 1,
+      "names": {
+        "english": "Give Everyone Armor"
+      },
+      "descriptions": {
+        "english": "Apply [armor] [effect0.status0.power] to all units."
+      },
+      "rarity": "uncommon",
+      "targets_room": true,
+      "targetless": true,
+      "class": "ClassBanished",
+      "card_art": "@GiveEveryoneArmorCardArt",
+      "pools": ["MegaPool"],
+      "effects": ["@GiveAllUnitsArmor"]
+    }
+  ],
+  "effects": [
+    {
+      "id": "GiveAllUnitsArmor",
+      "name": "CardEffectAddStatusEffect",
+      "target_mode": "room",
+      "target_team": "both",
+      "param_status_effects": [
+        {
+          "status": "armor",
+          "count": 2
+        }
+      ]
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "GiveEveryoneArmorCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@GiveEveryoneArmorSprite"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "GiveEveryoneArmorSprite",
+      "path": "textures/GiveEveryoneArmor.png"
+    }
+  ]
+}
