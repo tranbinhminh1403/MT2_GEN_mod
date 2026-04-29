@@ -24,9 +24,12 @@ namespace MT2_GEN_mod.Plugin
                     // Be sure to include any new json files if you add more.
                     c.AddMergedJsonFile(
                         "json/plugin.json",
-                        "json/global.json",
-                        "json/NotHornBreak.json",
-                        "json/GiveEveryoneArmor.json"
+                        "json/global.json"
+                        // "json/NotHornBreak.json",
+                        // "json/GiveEveryoneArmor.json",
+                        // "json/NotRazorsharpEdge.json",
+                        // "json/PlayOtherCardsSprite.json",
+                        // "json/PyreSharpener.json"
                     );
                 }
             );

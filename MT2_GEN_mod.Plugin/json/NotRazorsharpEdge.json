@@ -1,0 +1,56 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "NotRazorsharpEdge",
+      "cost": 1,
+      "names": {
+        "english": "Not Razorsharp Edge"
+      },
+      "descriptions": {
+        "english": "Apply +[effect0.upgrade.bonusdamage] and [effect0.upgrade.bonushp] to a unit."
+      },
+      "rarity": "uncommon",
+      "targets_room": true,
+      "targetless": false,
+      "class": "ClassBanished",
+      "card_art": "@NotRazorsharpEdgeCardArt",
+      "pools": ["MegaPool"],
+      "effects": ["@ApplyUpgrade"]
+    }
+  ],
+  "effects": [
+    {
+      "id": "ApplyUpgrade",
+      "name": "CardEffectAddCardUpgradeToUnits",
+      "target_mode": "drop_target_character",
+      "target_team": "both",
+      "param_upgrade": "@TenAttackMinusTwoHealth",
+      "param_int_3": 0
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "TenAttackMinusTwoHealth",
+      "bonus_damage": 10,
+      "bonus_hp": -2
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "NotRazorsharpEdgeCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@NotRazorsharpEdgeSprite"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "NotRazorsharpEdgeSprite",
+      "path": "textures/NotRazorsharpEdge.png"
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "PlayOthercards",
+      "cost": 2,
+      "names": {
+        "english": "Play Other Cards"
+      },
+      "descriptions": {
+        "english": "Apply +[trait0.power][attack] per card played this battle."
+      },
+      "rarity": "rare",
+      "targets_room": true,
+      "targetless": false,
+      "class": "ClassBanished",
+      "card_art": "@PlayOtherCardsCardArt",
+      "pools": ["MegaPool"],
+      "traits": ["@PlayOtherCardsScalingTrait"],
+      "effects": ["@ApplyScaledUpgrade"]
+    }
+  ],
+  "effects": [
+    {
+      "id": "ApplyScaledUpgrade",
+      "name": "CardEffectAddTempCardUpgradeToUnits",
+      "target_mode": "drop_target_character",
+      "target_team": "both",
+      "param_upgrade": "@PlayOtherCardsUpgrade"
+    }
+  ],
+  "traits": [
+    {
+      "id": "PlayOtherCardsScalingTrait",
+      "name": "CardTraitScalingUpgradeUnitAttack",
+      "param_tracked_value": "any_card_played",
+      "param_entry_duration": "this_battle",
+      "param_int": 2
+    }
+  ],
+  "upgrades": [
+    {
+      "id": "PlayOtherCardsUpgrade",
+      "bonus_damage": 0
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "PlayOtherCardsCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@PlayOtherCards"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "PlayOtherCardsSprite",
+      "path": "textures/PlayOtherCardsSprite.png"
+    }
+  ]
+}

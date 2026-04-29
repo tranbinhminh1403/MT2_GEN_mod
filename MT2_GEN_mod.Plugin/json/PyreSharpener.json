@@ -1,0 +1,62 @@
+{
+  "$schema": "https://github.com/Monster-Train-2-Modding-Group/Trainworks-Reloaded/releases/latest/download/schema.json",
+  "cards": [
+    {
+      "id": "PyreSharpener",
+      "cost": 0,
+      "cost_type": "unplayable",
+      "names": {
+        "english": "Pyre Sharpener"
+      },
+      "rarity": "common",
+      "targets_room": false,
+      "targetless": false,
+      "class": "ClassBanished",
+      "card_art": "@PyreSharpenerCardArt",
+      "traits": ["@PyreSharpenerUnplayable"],
+      "triggers": ["@BuffThePyreOnUnplayed"],
+      "pools": ["MegaPool"]
+    }
+  ],
+  "traits": [
+    {
+      "id": "PyreSharpenerUnplayable",
+      "name": "CardTraitUnplayable"
+    }
+  ],
+  "effects": [
+    {
+      "id": "BuffThePyre",
+      "name": "CardEffectBuffDamage",
+      "target_mode": "pyre",
+      "param_int": 3
+    }
+  ],
+  "card_triggers": [
+    {
+      "id": "BuffThePyreOnUnplayed",
+      "trigger": "on_unplayed_positive",
+      "descriptions": {
+        "english": "Apply +[effect0.power][attack] to your Pyre."
+      },
+      "effects": ["@BuffThePyre"]
+    }
+  ],
+  "game_objects": [
+    {
+      "id": "PyreSharpenerCardArt",
+      "type": "card_art",
+      "extensions": {
+        "card_art": {
+          "sprite": "@PyreSharpenerSprite"
+        }
+      }
+    }
+  ],
+  "sprites": [
+    {
+      "id": "PyreSharpenerSprite",
+      "path": "textures/PyreSharpener.png"
+    }
+  ]
+}
